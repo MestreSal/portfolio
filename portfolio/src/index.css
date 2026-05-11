@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-archivo: "Archivo", sans-serif;
+
+  --text-bodySm: 13px;
+  --text-bodyMd: 16px;
+  --text-bodyLg: 20px;
+  --text-headingSm: 31px;
+  --text-headingMd: 39px;
+  --text-headingLg: 49px;
+  --text-headingXl: 61px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+
+  --color-brand-indigo-100: #cecdeb;
+  --color-brand-indigo-200: #9893da;
+  --color-brand-indigo-300: #6c65ad;
+  --color-brand-indigo-400: #4e448e;
+  --color-brand-indigo-500: #3c356b;
+  --color-brand-indigo-600: #25233a;
+
+  --color-grayscale-50: #fdfdfd;
+  --color-grayscale-100: #f7f7f7;
+  --color-grayscale-200: #e7e7e8;
+  --color-grayscale-300: #d7d6d9;
+  --color-grayscale-400: #a3a1a6;
+  --color-grayscale-500: #747277;
+  --color-grayscale-600: #555358;
+  --color-grayscale-700: #414043;
+  --color-grayscale-800: #282829;
+  --color-grayscale-900: #19181a;
+  --color-grayscale-950: #0a090a;
+}
