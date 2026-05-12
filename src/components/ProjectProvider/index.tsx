@@ -1,11 +1,29 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ProjectContext from "./ProjectContext";
-import projects from "../../db/projects";
-import categories from "../../db/categories";
-import groups from "../../db/group";
 import type { Category, Group, Project } from "../../types";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../db/firebase";
 
 export function ProjectProvider({ children }: { children: React.ReactNode }) {
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [groups, setGroups] = useState<Group[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const queryCategories = await getDocs(collection(db, "categories"));
+      setCategories(queryCategories.docs.map((doc) => doc.data() as Category));
+
+      const queryGroups = await getDocs(collection(db, "groups"));
+      setGroups(queryGroups.docs.map((doc) => doc.data() as Group));
+
+      const queryProjects = await getDocs(collection(db, "projects"));
+      setProjects(queryProjects.docs.map((doc) => doc.data() as Project));
+    };
+
+    fetchData();
+  }, []);
+
   const filterProjects = useCallback(
     ({
       category,
@@ -37,7 +55,7 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
 
       return filtered;
     },
-    [],
+    [projects],
   );
 
   const filterCategoryOrGroup = useCallback(
@@ -72,13 +90,16 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
 
       return [];
     },
-    [],
+    [categories, groups],
   );
 
-  const getProjectsRandom = useCallback((max: number) => {
-    const shuffled = [...projects].sort(() => Math.random());
-    return shuffled.slice(0, max);
-  }, []);
+  const getProjectsRandom = useCallback(
+    (max: number) => {
+      const shuffled = [...projects].sort(() => Math.random());
+      return shuffled.slice(0, max);
+    },
+    [projects],
+  );
 
   return (
     <ProjectContext

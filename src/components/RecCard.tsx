@@ -12,7 +12,7 @@ const RecCard = ({ project }: { project: Project }) => {
         <img
           src={project.img}
           alt={project.name}
-          className="rounded-md w-[50%]"
+          className="rounded-md w-[50%] aspect-video object-cover"
         />
         <div className="flex gap-sm flex-col w-[50%] text-start">
           <Typography variant="bodyLg">{project.name}</Typography>

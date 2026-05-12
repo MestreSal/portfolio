@@ -17,12 +17,12 @@ function Project() {
   return (
     project && (
       <div className="gap-md flex h-full flex-col lg:flex-row">
-        <div className="flex flex-col gap-md flex-1">
+        <div className="flex flex-col gap-md lg:flex-2">
           <a href={project.link} target="_blank">
             <img
               src={project.img}
               alt={project.name}
-              className="w-full rounded-md"
+              className="w-full rounded-md aspect-video object-cover"
             />
           </a>
 

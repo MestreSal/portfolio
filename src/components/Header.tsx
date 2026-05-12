@@ -7,6 +7,7 @@ import checkboxMultipleBlankLine from "../assets/icons/checkbox-multiple-blank-l
 import searchLineFilled from "../assets/icons/search-line-filled.svg";
 import arrowLeftSLine from "../assets/icons/arrow-left-s-line.svg";
 import { useState } from "react";
+import { Link } from "react-router";
 
 const Header = ({
   onCollapse,
@@ -38,7 +39,9 @@ const Header = ({
             <button onClick={onCollapse} className="cursor-pointer">
               <Icon src={menuFill} />
             </button>
-            <img src={logo} alt="Logo" />
+            <Link to="/">
+              <img src={logo} alt="Logo" />
+            </Link>
           </div>
 
           <SearchBar onSearch={onSearch} className="hidden md:flex md:flex-1" />

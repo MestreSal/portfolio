@@ -6,7 +6,7 @@ const RecList = ({ projects }: { projects: Project[] }) => {
   return (
     <>
       {projects.length !== 0 ? (
-        <div className="flex flex-col">
+        <div className="flex flex-col lg:flex-1">
           {projects.map((project) => (
             <RecCard key={project.id} project={project} />
           ))}

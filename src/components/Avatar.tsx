@@ -31,7 +31,11 @@ const Avatar = ({
   return (
     <div className={variant({ variant: size }) + ` ${className}`}>
       {img && (
-        <img src={img} alt="Avatar" className="w-full h-full rounded-full" />
+        <img
+          src={img}
+          alt="Avatar"
+          className="h-full aspect-video object-cover rounded-full"
+        />
       )}
       {children && (
         <Typography variant="h4" className="text-grayscale-50">

@@ -10,6 +10,10 @@ function Home() {
 
   const [localProjects, setLocalProjects] = useState(projects);
 
+  useEffect(() => {
+    setLocalProjects(projects);
+  }, [projects]);
+
   const [currentCategory, setCurrentCategory] = useState<Category | null>(null);
 
   const { searchResults, searchedProjects } = useOutletContext<{

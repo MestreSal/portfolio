@@ -30,7 +30,11 @@ const Card = ({
       className={`flex w-full gap-sm p-sm rounded-md flex-col bg-grayscale-50 cursor-pointer ${link ? "hover:bg-brand-indigo-100" : ""}`}
       onClick={handleClick}
     >
-      <img src={project.img} alt={project.name} className="w-full rounded-md" />
+      <img
+        src={project.img}
+        alt={project.name}
+        className="w-full rounded-md aspect-video object-cover"
+      />
       <div className="flex gap-sm items-center">
         <Component
           to={`/categories/${project.category.id}`}
