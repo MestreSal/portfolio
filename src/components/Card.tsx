@@ -42,7 +42,7 @@ const Card = ({
             event.stopPropagation();
           }}
         >
-          <Avatar img={project.category.img} />
+          <Avatar img={project.category.icon} />
         </Component>
         <div className="flex flex-col flex-1">
           <Typography variant="bodyLg" className="text-start">

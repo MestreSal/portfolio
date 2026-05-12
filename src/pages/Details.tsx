@@ -13,7 +13,7 @@ function Details() {
   const { filterCategoryOrGroup, filterProjects } = use(ProjectContext);
   const type = filterCategoryOrGroup({
     type: typeName,
-    id: Number(location.pathname.split("/")[2]),
+    id: location.pathname.split("/")[2],
   })[0];
 
   const typeProjects = useMemo(
@@ -42,9 +42,14 @@ function Details() {
   return (
     type && (
       <div className="flex flex-col gap-lg">
+        <img
+          src={type.img}
+          className="h-40 w-full overflow-hidden rounded-xl object-cover"
+        />
+
         <div className="flex gap-md">
-          <Avatar img={type.img} size="lg" className="hidden md:block" />
-          <Avatar img={type.img} size="md" className="block md:hidden" />
+          <Avatar img={type.icon} size="lg" className="hidden md:block" />
+          <Avatar img={type.icon} size="md" className="block md:hidden" />
           <div className="flex flex-col flex-1 justify-center md:justify-start">
             <Typography variant="h1Bold">{type.name}</Typography>
             <Typography variant="bodyLg" className="hidden md:block">

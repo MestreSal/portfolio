@@ -10,7 +10,7 @@ function Project() {
 
   const { filterProjects, getProjectsRandom } = use(ProjectContext);
   const project = useMemo(
-    () => filterProjects({ id: Number(params.projectId) })[0],
+    () => filterProjects({ id: params.projectId })[0],
     [params.projectId],
   );
 
@@ -30,7 +30,7 @@ function Project() {
 
           <div className="flex gap-sm items-center">
             <Link to={`/categories/${project.category.id}`}>
-              <Avatar img={project.category.img} />
+              <Avatar img={project.category.icon} />
             </Link>
             <div className="flex flex-col flex-1">
               <Typography variant="bodyLg" className="text-start">
