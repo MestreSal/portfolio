@@ -31,7 +31,7 @@ const SearchBar = ({
         >
           <div className="rounded-l-full border-brand-indigo-400 border-2 overflow-clip focus-within:border-grayscale-950 flex-1 flex">
             <input
-              className="mx-[12px] my-[8px] focus:outline-none peer text-grayscale-950 font-archivo flex-1"
+              className="mx-md my-sm focus:outline-none peer text-grayscale-950 font-archivo flex-1"
               placeholder="Pesquisar"
               name="searchTerm"
             />

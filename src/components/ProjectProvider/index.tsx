@@ -34,7 +34,7 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
     }: {
       category?: Category;
       group?: Group;
-      id?: number;
+      id?: string;
       name?: string;
       projectsToFilter?: Project[];
     }) => {
@@ -65,7 +65,7 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
       name,
     }: {
       type: "categories" | "groups";
-      id?: number;
+      id?: string;
       name?: string;
     }) => {
       if (type === "categories") {

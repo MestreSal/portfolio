@@ -7,6 +7,7 @@ import Project from "./pages/Project";
 import Groups from "./pages/Groups";
 import Details from "./pages/Details";
 import NotFound from "./pages/NotFound";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/categories/:categoryId" element={<Details />} />
         <Route path="/groups" element={<Groups />} />
         <Route path="/groups/:groupId" element={<Details />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -14,7 +14,7 @@ const ProjectContext = createContext<{
   }: {
     category?: Category;
     group?: Group;
-    id?: number;
+    id?: string;
     name?: string;
     projectsToFilter?: Project[];
   }) => Project[];
@@ -24,7 +24,7 @@ const ProjectContext = createContext<{
     name,
   }: {
     type: "categories" | "groups";
-    id?: number;
+    id?: string;
     name?: string;
   }) => Category[] | Group[];
   getProjectsRandom: (max: number) => Project[];

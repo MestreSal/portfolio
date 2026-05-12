@@ -1,5 +1,5 @@
 export interface Project {
-  id: number;
+  id: string;
   name: string;
   img: string;
   group: Group;
@@ -9,7 +9,7 @@ export interface Project {
 }
 
 export interface Category {
-  id: number;
+  id: string;
   name: string;
   img: string;
   icon: string;
@@ -17,7 +17,7 @@ export interface Category {
 }
 
 export interface Group {
-  id: number;
+  id: string;
   name: string;
   img: string;
   icon: string;

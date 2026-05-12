@@ -8,6 +8,8 @@ import searchLineFilled from "../assets/icons/search-line-filled.svg";
 import arrowLeftSLine from "../assets/icons/arrow-left-s-line.svg";
 import { useState } from "react";
 import { Link } from "react-router";
+import Avatar from "./Avatar";
+import settings from "../assets/icons/settings.svg";
 
 const Header = ({
   onCollapse,
@@ -54,7 +56,9 @@ const Header = ({
               <Icon src={searchLineFilled} />
             </button>
             <GroupButton img={checkboxMultipleBlankLine} />
-            {/* <Avatar>A</Avatar> */}
+            <Link to="/settings">
+              <Avatar img={settings} />
+            </Link>
           </div>
         </>
       )}
