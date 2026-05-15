@@ -8,19 +8,27 @@ function Categories() {
 
   return (
     <>
-      {categories.map((category) => (
-        <div key={category.id} className="flex flex-col gap-lg pb-2xl">
-          <Typography variant="h4Bold" key={category.id}>
-            {category.name}
-          </Typography>
-          <CardList
-            key={"list" + category.id}
-            projects={projects.filter(
-              (project) => project.category.id === category.id,
-            )}
-          />
-        </div>
-      ))}
+      {categories.length !== 0 ? (
+        <>
+          {categories.map((category) => (
+            <div key={category.id} className="flex flex-col gap-lg pb-2xl">
+              <Typography variant="h4Bold" key={category.id}>
+                {category.name}
+              </Typography>
+              <CardList
+                key={"list" + category.id}
+                projects={projects.filter(
+                  (project) => project.category.id === category.id,
+                )}
+              />
+            </div>
+          ))}
+        </>
+      ) : (
+        <Typography variant="h4" className="text-center p-lg">
+          Nenhuma categoria encontrada.
+        </Typography>
+      )}
     </>
   );
 }

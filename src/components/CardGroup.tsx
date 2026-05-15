@@ -16,7 +16,7 @@ const CardGroup = ({ group }: { group: Group }) => {
   return (
     <Link
       to={`/groups/${group.id}`}
-      className="flex w-full gap-sm p-sm rounded-md flex-col bg-grayscale-100 hover:bg-brand-indigo-100 cursor-pointer"
+      className="flex w-full gap-sm p-sm rounded-md flex-col bg-grayscale-100 hover:bg-brand-indigo-100 cursor-pointer justify-between"
     >
       <div className="grid grid-cols-2 gap-sm">
         {displayProjects.map((project) => (

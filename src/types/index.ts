@@ -6,6 +6,7 @@ export interface Project {
   category: Category;
   description: string;
   link: string;
+  github: string;
 }
 
 export interface Category {
