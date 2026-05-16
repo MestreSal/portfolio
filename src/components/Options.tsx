@@ -1,6 +1,7 @@
 import { useState } from "react";
 import OptionsButton from "./OptionsButton";
 import type { Category } from "../types";
+import { Tabs } from "@mui/material";
 
 const Options = ({
   categories,
@@ -19,7 +20,7 @@ const Options = ({
   };
 
   return (
-    <div className="flex justify-between px-sm">
+    <Tabs variant="scrollable" scrollButtons="auto">
       <OptionsButton
         onClick={() => {
           onClickAll();
@@ -38,7 +39,7 @@ const Options = ({
           {category.name}
         </OptionsButton>
       ))}
-    </div>
+    </Tabs>
   );
 };
 

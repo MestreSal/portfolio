@@ -3,10 +3,14 @@ import Avatar from "./Avatar";
 import { Typography } from "./Typography";
 import type { Project } from "../types";
 import type { ElementType, MouseEvent } from "react";
+import githubFill from "../assets/icons/github-fill.svg";
+import imgPlaceholder from "../assets/placeholders/img-placeholder.svg";
+import iconPlaceholder from "../assets/placeholders/icon-placeholder.svg";
 
 const TAGS: Record<string, ElementType> = {
   link: Link,
   div: "div",
+  a: "a",
 };
 
 const Card = ({
@@ -23,7 +27,8 @@ const Card = ({
     }
   };
 
-  const Component: ElementType = link ? TAGS.link : TAGS.div;
+  const ComponentLink: ElementType = link ? TAGS.link : TAGS.div;
+  const ComponentA: ElementType = link ? TAGS.a : TAGS.div;
 
   return (
     <div
@@ -31,19 +36,19 @@ const Card = ({
       onClick={handleClick}
     >
       <img
-        src={project.img}
+        src={project.img || imgPlaceholder}
         alt={project.name}
         className="w-full rounded-md aspect-video object-cover"
       />
       <div className="flex gap-sm items-center">
-        <Component
+        <ComponentLink
           to={`/categories/${project.category.id}`}
           onClick={(event: MouseEvent) => {
             event.stopPropagation();
           }}
         >
-          <Avatar img={project.category.icon} />
-        </Component>
+          <Avatar img={project.category.icon || iconPlaceholder} />
+        </ComponentLink>
         <div className="flex flex-col flex-1">
           <Typography variant="bodyLg" className="text-start">
             {project.name}
@@ -52,7 +57,17 @@ const Card = ({
             {project.category.name} | {project.group.name}
           </Typography>
         </div>
-        {/* <Icon src="src\assets\icons\information-line.svg" /> */}
+        {project.github && (
+          <ComponentA
+            href={project.github}
+            onClick={(event: MouseEvent) => {
+              event.stopPropagation();
+            }}
+            target="_blank"
+          >
+            <img src={githubFill} />
+          </ComponentA>
+        )}
       </div>
     </div>
   );

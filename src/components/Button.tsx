@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { Typography } from "./Typography";
-import type { ElementType, JSX } from "react";
+import type { ElementType } from "react";
 
 const TAGS: Record<string, ElementType> = {
   link: Link,

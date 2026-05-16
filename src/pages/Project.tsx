@@ -4,6 +4,9 @@ import { Link, useParams } from "react-router";
 import { Typography } from "../components/Typography";
 import Avatar from "../components/Avatar";
 import RecList from "../components/RecList";
+import githubFill from "../assets/icons/github-fill.svg";
+import imgPlaceholder from "../assets/placeholders/img-placeholder.svg";
+import iconPlaceholder from "../assets/placeholders/icon-placeholder.svg";
 
 function Project() {
   const params = useParams();
@@ -20,7 +23,7 @@ function Project() {
         <div className="flex flex-col gap-md lg:flex-2">
           <a href={project.link} target="_blank">
             <img
-              src={project.img}
+              src={project.img || imgPlaceholder}
               alt={project.name}
               className="w-full rounded-md aspect-video object-cover"
             />
@@ -30,14 +33,16 @@ function Project() {
 
           <div className="flex gap-sm items-center">
             <Link to={`/categories/${project.category.id}`}>
-              <Avatar img={project.category.icon} />
+              <Avatar img={project.category.icon || iconPlaceholder} />
             </Link>
             <div className="flex flex-col flex-1">
               <Typography variant="bodyLg" className="text-start">
                 {project.category.name} | {project.group.name}
               </Typography>
             </div>
-            {/* <Icon src="src\assets\icons\information-line.svg" /> */}
+            <a href={project.github} target="_blank">
+              <img src={githubFill} />
+            </a>
           </div>
 
           <Typography

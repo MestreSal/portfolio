@@ -11,7 +11,7 @@ const OptionsButton = ({
 }) => {
   return (
     <button
-      className={`rounded-sm px-sm py-xs cursor-pointer active:bg-brand-indigo-400 ${isActive ? "bg-brand-indigo-400" : "bg-grayscale-50"}`}
+      className={`rounded-sm px-sm py-xs cursor-pointer mx-auto active:bg-brand-indigo-400 ${isActive ? "bg-brand-indigo-400" : "bg-grayscale-50"}`}
       onClick={onClick}
     >
       <Typography

@@ -67,7 +67,7 @@ function Feed() {
       <Header onCollapse={handleSidebarOpen} onSearch={handleSearch} />
       <div className="flex flex-1">
         <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        <main className="flex flex-1 flex-col lg:px-xl px-md">
+        <main className="flex flex-1 flex-col lg:px-xl px-md min-w-0">
           <Outlet
             context={{ searchResults, searchedProjects, searchedGroups }}
           />

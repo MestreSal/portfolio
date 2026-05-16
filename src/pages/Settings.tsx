@@ -12,7 +12,7 @@ import useUpdateProject from "../hooks/useUpdateProject";
 import Textarea from "../components/Textarea";
 
 function Settings() {
-  const { categories, groups } = use(ProjectContext);
+  const { categories, groups, projects } = use(ProjectContext);
 
   const { submitCategory, submitGroup, submitProject } = useCreate();
   const { handleLogin, user } = useLogin();
@@ -188,7 +188,7 @@ function Settings() {
                 className="flex flex-col h-fit gap-sm"
               >
                 <Typography variant="h2">Atualizar projeto</Typography>
-                <Select list={groups} name="select" />
+                <Select list={projects} name="select" />
                 <Button className="cursor-pointer">Selecionar</Button>
               </form>
               {selectedProject && (
