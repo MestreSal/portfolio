@@ -1,0 +1,9 @@
+// Base URL APIs internas (BFF)
+export const API_BASE_URL = "http://localhost:3000";
+
+// Endpoints da API
+export const API_ENDPOINTS = {
+  CATEGORIES: "/api/categories",
+  GROUPS: "/api/groups",
+  PROJECTS: "/api/projects",
+};

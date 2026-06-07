@@ -5,8 +5,13 @@ import {
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { db } from "../../lib/firebase";
 
-export default function useLogin() {
+export function useLogin() {
+  if (!db) {
+    throw new Error("Firebase database not initialized");
+  }
+
   const auth = getAuth();
   const [user, setUser] = useState(false);
 
