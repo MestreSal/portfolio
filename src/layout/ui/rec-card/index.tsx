@@ -1,7 +1,7 @@
-import type { Project } from "types";
 import Image from "next/image";
 import { Typography } from "../typography";
 import Link from "next/link";
+import type { Project } from "../../../../types";
 
 export const RecCard = ({ project }: { project: Project }) => {
   return (

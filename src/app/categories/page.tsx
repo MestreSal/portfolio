@@ -2,6 +2,8 @@ import { CardList, Typography } from "layout/ui";
 import type { Category } from "../../../types";
 import { API_BASE_URL, API_ENDPOINTS } from "../../../lib/config";
 
+export const dynamic = "force-dynamic";
+
 async function Categories() {
   const categories: Category[] = await fetch(
     `${API_BASE_URL}${API_ENDPOINTS.CATEGORIES}`,

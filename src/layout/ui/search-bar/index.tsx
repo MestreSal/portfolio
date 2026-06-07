@@ -1,6 +1,6 @@
 import searchLine from "assets/icons/search-line.svg";
 import searchLineSimplified from "assets/icons/search-line-simplified.svg";
-import { Avatar, Icon } from "layout/ui";
+import { Avatar } from "layout/ui";
 
 export const SearchBar = ({
   onSearch,

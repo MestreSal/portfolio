@@ -1,5 +1,5 @@
-import type { Project } from "types";
 import { RecCard, Typography } from "layout/ui";
+import type { Project } from "../../../../types";
 
 export const RecList = ({ projects }: { projects: Project[] }) => {
   return (

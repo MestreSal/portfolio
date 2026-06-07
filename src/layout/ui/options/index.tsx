@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import type { Category } from "types";
 import { Tabs } from "@mui/material";
 import { OptionsButton } from "layout/ui";
+import type { Category } from "../../../../types";
 
 export const Options = ({
   categories,
